@@ -1,1 +1,8 @@
-{}
+{
+  "integrationFolder": "e2e/integration",
+  "fixturesFolder": false,
+  "pluginsFile": "e2e/plugins/index.js",
+  "supportFile": false,
+  "videosFolder": "e2e/videos",
+  "screenshotsFolder": "e2e/screenshots"
+}

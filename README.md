@@ -1,15 +1,17 @@
-TypeScript Cypress Test Demo
+TypeScript Cypress Use Different Dir Demo
 =========================================
 
-注意点：
+cypress默认使用的是项目下`cypress`这个目录，如果想换个目录，可能因为cypress的问题，并没有那么简单。
 
-1. `cypress/plugins/index.js`不能使用`.ts`，所以`webpack.config.js`也不能使用`.ts`
-2. 由于混用了`.js`与`.ts`，所以webpack中要设置`resolve`->`extensions`
-3. `tsconfig.json`中一定要设置`"types": [ "cypress" ]`，否则`cy`等typing找不到
+虽然 https://docs.cypress.io/guides/references/configuration.html#Folders-Files 中提供了
+`fileServerFolder`这个选项，看似是指定整体目录，但是没用，还必须依次指定其它各项目录或者文件，
+否则运行`cypress open`时，会自动创建`cypress`及相应的子目录。
+
+未来可能会增加`cypress init`命令来解决相关问题：
+https://github.com/cypress-io/cypress/issues/619
 
 ```
 npm install
 npm run test:open
-
 npm run test:run
 ```
